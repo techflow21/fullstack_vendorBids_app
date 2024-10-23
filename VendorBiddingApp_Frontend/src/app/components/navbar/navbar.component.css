@@ -1,0 +1,21 @@
+.navbar-brand{
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+.navbar-nav .nav-item .nav-link {
+  margin-right: 15px;
+  color: #fff;
+  font-weight: 600;
+  font-size: larger;
+}
+
+.navbar-nav .nav-item .nav-link.active {
+  font-weight: bold;
+  color: #4c84c0;
+}
+
+.logout-link{
+  cursor: pointer;
+  color: #f3aeae;
+}

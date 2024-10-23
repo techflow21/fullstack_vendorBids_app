@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ZAhokrR9GzknUqjSFhIbpKEoS6TCq7w27PYCxyYQhYw=",
+  "Source": "VendorBiddingApp_Backend",
+  "BasePath": "_content/VendorBiddingApp_Backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

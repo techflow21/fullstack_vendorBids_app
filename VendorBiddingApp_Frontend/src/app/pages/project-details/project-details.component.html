@@ -1,0 +1,33 @@
+<div class="container mt-5"></div>
+  <h2 class="m-5">Project Details</h2>
+
+  <div class="container mt-4" *ngIf="project">
+    <h2>{{ project.title }}</h2>
+    <p>{{ project.description }}</p>
+    <p>Bids: {{ project.bidCount }}</p>
+    <p>Date Added: {{ project.createdAt | date }}</p>
+
+    <button class="btn btn-primary" (click)="openBidModal(bidModal)" *ngIf="authService.isAuthenticated()">
+      Place Bid
+    </button>
+  </div>
+
+  <!-- Modal Content -->
+<ng-template #bidModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Submit a Bid</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="bidForm" (ngSubmit)="submitBid()">
+      <div class="form-group">
+        <label for="amount" class="mb-3">Enter your Bid Amount</label>
+        <input id="amount" formControlName="amount" class="form-control" />
+        <div *ngIf="bidForm.get('amount')?.invalid && bidForm.get('amount')?.touched" class="text-danger">
+          Bid amount is required.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="bidForm.invalid">Submit Bid</button>
+    </form>
+  </div>
+</ng-template>

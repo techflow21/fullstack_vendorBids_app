@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\VendorBiddingApp_Backend.props" />
+</Project>

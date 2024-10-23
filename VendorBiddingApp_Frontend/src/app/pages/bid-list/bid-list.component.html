@@ -1,0 +1,20 @@
+<div class="container mt-4">
+    <h2>My Bids</h2>
+    <table class="table mt-5">
+      <thead>
+        <tr>
+          <th>Project Title</th>
+          <th>Bidded Amount</th>
+          <th>Date Submitted</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bid of bids">
+          <td>{{ bid.project.title }}</td>
+          <td>{{ bid.amount }}</td>
+          <td>{{ bid.submittedAt | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

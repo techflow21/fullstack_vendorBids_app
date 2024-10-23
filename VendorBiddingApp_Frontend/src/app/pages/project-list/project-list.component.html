@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <h2>Available Projects</h2>
+  <!-- Check if projects are available -->
+  <div *ngIf="projects.length > 0; else noProjects">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let project of projects">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a [routerLink]="['/projects', project.id]">{{
+                project.title
+              }}</a>
+            </h5>
+            <p class="card-text mt-3">{{ project.description }}</p>
+
+            <p class="card-text">Bids: {{ project.bidCount }}</p>
+            <p class="card-text">Date Added: {{ project.createdAt | date }}</p>
+            <a [routerLink]="['/projects', project.id]" class="btn btn-primary"
+              >View Details</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Template to show if there are no projects available -->
+  <ng-template #noProjects>
+    <div class="alert alert-info mt-4">
+      <h4>No project available at the moment!</h4>
+    </div>
+  </ng-template>
+</div>
