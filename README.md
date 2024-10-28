@@ -62,6 +62,8 @@ Once the Window has opened up, run the following command to update the database 
 Click on any of the green play icon to run the backend server.
 The backend API should now be running on https://localhost:5001 with Swagger UI loaded.
 
+---
+
 ## Frontend Setup
 1. Open the clone project folder, right-click and Select Git-bash here and navigate to the frontend folder with the command below:
 
@@ -72,7 +74,7 @@ Then, enter the following to automatically load up the project on Visual Studio 
 ```bash
    code .
 ```
-2. Then, locate terminal menu, the window opens up. Install the necessary packages with the command below:
+2. Then, locate terminal menu, the window opens up. Install the necessary libraries using the command below:
 ```bash
    npm install
 ```
@@ -82,6 +84,8 @@ Then, enter the following to automatically load up the project on Visual Studio 
 ```
 The frontend should now be running on http://localhost:4200.
 The app should be ready for testing at this point.
+
+---
 
 ## Technologies Used
 Backend: .NET Core, Entity Framework Core, SQL Server, JWT for authentication
