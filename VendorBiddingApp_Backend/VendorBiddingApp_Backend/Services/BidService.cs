@@ -31,7 +31,7 @@ namespace VendorBiddingApp_Backend.Services
             var bid = new Bid
             {
                 ProjectId = projectId,
-                VendorId = int.Parse(vendorId),
+                VendorId = vendorId,
                 Amount = createBidDto.Amount,
                 SubmittedAt = DateTime.UtcNow
             };

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VendorBiddingApp_Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1763f49c72f9ab3c1ae8b67ddbdf1b42d958eef7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f22eed6dd97b793af10f0850fd4a32da6f60709")]
 [assembly: System.Reflection.AssemblyProductAttribute("VendorBiddingApp_Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VendorBiddingApp_Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

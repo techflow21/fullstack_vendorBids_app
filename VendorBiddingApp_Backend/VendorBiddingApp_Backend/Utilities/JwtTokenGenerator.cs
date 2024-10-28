@@ -19,7 +19,9 @@ namespace VendorBiddingApp_Backend.Utilities
         {
             var claims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.Jti, vendor.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Sub, vendor.Id),
+                new Claim(JwtRegisteredClaimNames.Email, vendor.Email!),
+                new Claim(ClaimTypes.NameIdentifier, vendor.Id),
                 new Claim("VendorId", vendor.Id.ToString()),
                 new Claim("VendorName", vendor.Name)
             };
