@@ -42,11 +42,14 @@ The nugget package dependencies will be restored using internet connectivity.
 
 2. Update the connection string in appsettings.json under "ConnectionStrings":
 Upadate the appsettings.json file in the project with your database connection string like below:
+
 ```bash
-"ConnectionStrings": {
-    "LocalConnection": "Server=server_name;Initial Catalog=database_name;Trusted_Connection=True;Trust Server Certificate=True;MultipleActiveResultSets=True"
-}
+   "ConnectionStrings": {
+       "LocalConnection": "Server=server_name;Initial Catalog=database_name;Trusted_Connection=True;Trust Server   
+        Certificate=True;MultipleActiveResultSets=True"
+   }
 ```
+
 3. Run Entity Framework Core migrations to set up the database:
 Locate the Tools menu on the Visual Studio and click, then click on NuGet Package Manager, then Package Manager Console.
 Once the Window has opened up, run the following command to update the database with available Migrations.
