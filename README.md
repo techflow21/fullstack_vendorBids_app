@@ -34,11 +34,10 @@ Make sure you have the following installed:
 ## Installation
 
 1. To clone this repository using Visual Studio Editor:
-Launch the Visual Studio, Once it opens, click on the link that says Clone repository and paste the link below:
-   ```bash
+Launch the Visual Studio, Once it opens, click on the link that says Clone repository and paste the link below. The NuGet Package Dependencies will be restored using internet connectivity:
+```bash
    git clone https://github.com/techflow21/fullstack_vendorBids_app.git
 ```
-The nugget package dependencies will be restored using internet connectivity.
 
 2. Update the connection string in appsettings.json under "ConnectionStrings":
 Upadate the appsettings.json file in the project with your database connection string like below:
