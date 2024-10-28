@@ -26,7 +26,8 @@ Make sure you have the following installed:
 
 - **Node.js** (for frontend)
 - **Visual Studio** (for Backend code Editor)
-- **.NET SDK** (for backend
+- **Visual Studio Code** (for Frontend code Editor)
+- **.NET SDK** (for backend)
 - **SQL Server** (for database)
 - **Git** (for cloning repository)
 
@@ -77,7 +78,7 @@ Then, enter the following to automatically load up the project on Visual Studio 
 ```
 3. Run the frontend application:
 ```bash
-   ng serve
+   ng serve -o
 ```
 The frontend should now be running on http://localhost:4200.
 The app should be ready for testing at this point.
