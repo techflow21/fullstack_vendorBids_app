@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Desktop\\VendorBids_App\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend.csproj": {}
+    "C:\\Users\\HP\\Desktop\\FullStackVendor\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Desktop\\VendorBids_App\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend.csproj": {
+    "C:\\Users\\HP\\Desktop\\FullStackVendor\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\VendorBids_App\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\FullStackVendor\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend.csproj",
         "projectName": "VendorBiddingApp_Backend",
-        "projectPath": "C:\\Users\\HP\\Desktop\\VendorBids_App\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend.csproj",
+        "projectPath": "C:\\Users\\HP\\Desktop\\FullStackVendor\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\VendorBids_App\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\FullStackVendor\\VendorBiddingApp_Backend\\VendorBiddingApp_Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
@@ -61,11 +61,25 @@
               "target": "Package",
               "version": "[8.0.10, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.10, )"
             },

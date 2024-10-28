@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public decimal Amount { get; set; }
 
-        public int VendorId { get; set; }
+        public string VendorId { get; set; }
         public Vendor Vendor { get; set; }
 
         public int ProjectId { get; set; }

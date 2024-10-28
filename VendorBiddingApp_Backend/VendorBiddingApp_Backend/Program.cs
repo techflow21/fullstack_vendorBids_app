@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using VendorBiddingApp_Backend.Data;
 using VendorBiddingApp_Backend.Interfaces;
+using VendorBiddingApp_Backend.Models;
 using VendorBiddingApp_Backend.Services;
 using VendorBiddingApp_Backend.Utilities;
 
@@ -15,11 +17,7 @@ namespace VendorBiddingApp_Backend
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-            // Added DbContext using in-memory database
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseInMemoryDatabase("VendorBid_Db"));
-
+            
             // Added CORS support configuration
             builder.Services.AddCors(options =>
             {
@@ -31,14 +29,28 @@ namespace VendorBiddingApp_Backend
                 });
             });
 
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("LocalConnection")));
+
+            builder.Services.AddIdentityCore<Vendor>(options =>
+            {
+                options.User.RequireUniqueEmail = true;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 6;
+            }).AddEntityFrameworkStores<ApplicationDbContext>().AddSignInManager<SignInManager<Vendor>>();
+
+
             // Added JWT Token Authentication Support
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
                         ValidIssuer = builder.Configuration["Jwt:Issuer"],

@@ -29,7 +29,7 @@ namespace VendorBiddingApp_Backend.Controllers
 
         [HttpGet("{id}")]
         [SwaggerOperation(Summary = "Fetch a vendor")]
-        public async Task<IActionResult> GetVendor(int id)
+        public async Task<IActionResult> GetVendor(string id)
         {
             var vendor = await _vendorService.GetVendorAsync(id);
             if (vendor == null)

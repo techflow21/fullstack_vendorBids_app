@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using VendorBiddingApp_Backend.Data;
 using VendorBiddingApp_Backend.DTOs;
 using VendorBiddingApp_Backend.Interfaces;
@@ -8,37 +9,43 @@ namespace VendorBiddingApp_Backend.Services
 {
     public class VendorService : IVendorService
     {
-        private readonly ApplicationDbContext _context;
+        private readonly UserManager<Vendor> _userManager;
 
-        public VendorService(ApplicationDbContext context)
+        public VendorService(UserManager<Vendor> userManager)
         {
-            _context = context;
+            _userManager = userManager;
         }
 
         public async Task<Vendor> CreateVendorAsync(VendorDto vendorDto)
         {
             // Check if email already exists
-            if (await _context.Vendors.AnyAsync(v => v.Email == vendorDto.Email))
+            var existingUser = await _userManager.FindByEmailAsync(vendorDto.Email);
+            if (existingUser != null)
             {
                 throw new Exception("Email already in use.");
             }
 
             var vendor = new Vendor
             {
-                Name = vendorDto.Name,
+                UserName = vendorDto.Email,
                 Email = vendorDto.Email,
-                CreatedAt = DateTime.UtcNow,
-                Password = BCrypt.Net.BCrypt.HashPassword(vendorDto.Password)
+                Name = vendorDto.Name,
+                CreatedAt = DateTime.UtcNow
             };
 
-             _context.Vendors.Add(vendor);
-            await _context.SaveChangesAsync();
+            var result = await _userManager.CreateAsync(vendor, vendorDto.Password);
+
+            if (!result.Succeeded)
+            {
+                throw new Exception($"Error creating vendor");
+            }
+
             return vendor;
         }
 
-        public async Task<Vendor?> GetVendorAsync(int id)
+        public async Task<Vendor?> GetVendorAsync(string id)
         {
-            return  await _context.Vendors.FindAsync(id);
+            return await _userManager.FindByIdAsync(id);
         }
     }
 
